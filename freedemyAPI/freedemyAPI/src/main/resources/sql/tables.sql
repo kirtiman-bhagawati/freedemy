@@ -14,8 +14,16 @@ constraint customer_profile_pk primary key(id), constraint customer_profiles_cus
 create table course_customer_relations(customer_id, course_id, constraint course_customer_relations_customer_fk foreign key(customer_id) references customers(id),
 constraint course_customer_relations_courses_fk foreign key(course_id) references courses(id));
 
+alter table customers add first_name varchar2(100) not null;
+alter table customers add last_name varchar2(100) not null;
+alter table customers add dob date not null;
+alter table customers add country varchar2(100) not null;
+
+drop table customer_profiles;
+
+alter table customers modify password varchar2(500) not null;
+
 --select queries for the tables
 select * from customers;
-select * from customer_profiles;
 select * from courses;
 select * from course_customer_relations;
