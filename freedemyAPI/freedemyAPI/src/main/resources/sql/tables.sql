@@ -22,6 +22,7 @@ alter table customers add country varchar2(100) not null;
 drop table customer_profiles;
 
 alter table customers modify password varchar2(500) not null;
+alter table customers add role varchar2(100) not null;
 
 --select queries for the tables
 select * from customers;

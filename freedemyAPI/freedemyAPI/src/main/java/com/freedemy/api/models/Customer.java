@@ -26,6 +26,8 @@ public class Customer {
     private Date dob;
     @Column(name = "country")
     private String country;
+    @Column(name = "role")
+    private String role;
 
     public int getCustomerId() {
         return customerId;
@@ -81,5 +83,13 @@ public class Customer {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
