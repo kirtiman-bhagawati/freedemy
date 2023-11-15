@@ -43,7 +43,7 @@ public class SecurityConfigurations {
                 })
                 //.and().csrf().ignoringRequestMatchers("/signup") //get methods are not protected against csrf, hence can be omitted from the list, we can ignore csrf protection against public APIs like signup etc
                 //.and().csrf().disable() //disabling csrf is never recommended
-                .and().csrf((csrf)->csrf.csrfTokenRequestHandler(csrfTokenRequestAttributeHandler).ignoringRequestMatchers("/signup","/addcourse")
+                .and().csrf((csrf)->csrf.csrfTokenRequestHandler(csrfTokenRequestAttributeHandler).ignoringRequestMatchers("/signup")
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())) //withHttpOnlyFalse() is used to make sure Angular JS frontend can read the values
                 .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)//execute csrfcookiefilter after basicautehnticationfilter
                 .authorizeHttpRequests((requests) -> requests
